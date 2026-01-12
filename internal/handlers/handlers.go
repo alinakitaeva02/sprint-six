@@ -12,7 +12,8 @@ import (
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "../index.html")
+	path := filepath.Join(".", "index.html")
+	http.ServeFile(w, r, path)
 }
 func UploadHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
